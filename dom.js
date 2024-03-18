@@ -76,8 +76,10 @@ const renderContacts = () => {
         </svg>
       </button>
 
+      <div class="hola">
         <p id="contact-name">${contact.name}</p>
         <p id="contact-number">${contact.phone}</p>
+      </div>
 
       <button class="edit-btn">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -139,8 +141,8 @@ list.addEventListener('click', e => {
 
   if (editBtn) {
     const li = editBtn.parentElement;
-    const name = li.children[1];
-    const phone = li.children[2];
+    const name = li.children[1].children[0];
+    const phone = li.children[1].children[1];
     const nameValidacion = REGEX_NAME.test(name.innerHTML)
     const phoneValidacion = NUMBER_REGEX.test(phone.innerHTML)
 
